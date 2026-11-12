@@ -1,0 +1,178 @@
+# SpendWise
+## Software Requirements Specification (SRS)
+
+**Project Name:** SpendWise – Personal Expense Tracker  
+**Version:** 1.0  
+**Project Type:** Full Stack Web Application  
+**Technology:** MERN Stack  
+**Status:** Proposed
+
+---
+
+## 1. Introduction
+
+### 1.1 Purpose
+SpendWise is a web-based personal expense tracking application designed to help users manage their income and expenses efficiently. It provides an interactive dashboard to monitor financial activities, categorize transactions, and analyze spending patterns.
+
+### 1.2 Scope
+The application will allow users to:
+- Record income and expenses.
+- View, update and delete transactions.
+- Categorize financial transactions.
+- Search transactions using keywords.
+- Filter and sort transaction records.
+- View monthly financial summaries.
+- Analyze spending through charts.
+
+### 1.3 Intended Users
+- College students.
+- Individuals managing personal finances.
+- Users interested in tracking monthly expenses.
+
+## 2. Overall Description
+
+### 2.1 Product Perspective
+SpendWise will be developed as a full-stack web application using React for the frontend, Node.js and Express.js for the backend, and MongoDB for database management.
+
+### 2.2 Product Functions
+1. Transaction management.
+2. Income and expense categorization.
+3. Transaction search and filtering.
+4. Financial summary dashboard.
+5. Monthly expense analysis.
+6. Transaction history management.
+
+### 2.3 Technology Requirements
+- Frontend: React.js, HTML5, CSS3, JavaScript.
+- Backend: Node.js, Express.js.
+- Database: MongoDB.
+- ODM: Mongoose.
+- Development environment: VS Code.
+- API testing: Postman.
+- Database visualization: MongoDB Compass.
+
+## 3. Functional Requirements
+
+### FR-01: Add Transaction
+The system shall allow users to add a transaction with:
+- Transaction title.
+- Amount.
+- Transaction type (Income/Expense).
+- Category.
+- Date.
+- Optional description.
+
+### FR-02: View Transactions
+The system shall retrieve and display all stored transactions from MongoDB.
+
+### FR-03: Update Transaction
+The system shall allow users to modify existing transaction details.
+
+### FR-04: Delete Transaction
+The system shall allow users to delete a selected transaction.
+
+### FR-05: Search Transactions
+The system shall support keyword-based searching using MongoDB regular expressions (Regex).
+
+### FR-06: Filter Transactions
+The system shall allow filtering by:
+- Transaction type.
+- Category.
+- Date range.
+- Amount range.
+
+### FR-07: Sort Transactions
+The system shall support sorting by transaction date and amount.
+
+### FR-08: Pagination
+The system shall display transaction records in pages using MongoDB query methods such as `.limit()` and `.skip()`.
+
+### FR-09: Financial Dashboard
+The system shall calculate and display:
+- Total income.
+- Total expenses.
+- Remaining balance.
+- Category-wise expenses.
+
+### FR-10: Monthly Analysis
+The system shall provide a monthly summary of financial activities.
+
+## 4. Non-Functional Requirements
+
+### 4.1 Performance
+- Transaction records should load efficiently.
+- Database queries should avoid unnecessary data retrieval.
+- Search and filtering should provide timely results.
+
+### 4.2 Usability
+- The interface should be simple and intuitive.
+- Forms should provide clear validation messages.
+- Dashboard information should be easy to understand.
+
+### 4.3 Reliability
+- The system should handle invalid inputs.
+- Database errors should be handled gracefully.
+- Failed operations should provide appropriate feedback.
+
+### 4.4 Maintainability
+- Frontend and backend code should be modular.
+- Database schemas should be maintained separately.
+- APIs should follow consistent naming conventions.
+
+### 4.5 Security
+- User inputs should be validated.
+- Database credentials should be stored in environment variables.
+- Database queries should use safe, structured inputs.
+
+## 5. Database Requirements
+
+### 5.1 Transactions Collection
+
+| Field | Data Type | Description |
+|---|---|---|
+| _id | ObjectId | Unique transaction ID |
+| title | String | Transaction name |
+| amount | Number | Transaction amount |
+| type | String | Income/Expense |
+| category | ObjectId/String | Transaction category |
+| date | Date | Transaction date |
+| description | String | Optional details |
+| createdAt | Date | Creation timestamp |
+
+### 5.2 Categories Collection
+
+| Field | Data Type | Description |
+|---|---|---|
+| _id | ObjectId | Unique category ID |
+| name | String | Category name |
+| description | String | Category details |
+
+Mongoose schemas will implement field-level validation using required fields, minimum values, string length restrictions and enum validation.
+
+## 6. API Requirements
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | /api/transactions | Fetch all transactions |
+| GET | /api/transactions/:id | Fetch transaction by ID |
+| POST | /api/transactions | Add transaction |
+| PUT | /api/transactions/:id | Update transaction |
+| DELETE | /api/transactions/:id | Delete transaction |
+| GET | /api/transactions/search | Search transactions |
+| GET | /api/transactions/summary | Get financial summary |
+| GET | /api/categories | Fetch categories |
+
+## 7. System Constraints
+- MongoDB must be available for database operations.
+- Backend APIs must be developed using Express.js.
+- Mongoose must be used for schema definition and database interaction.
+- React must communicate with the backend using HTTP requests.
+- The application requires an internet connection when deployed online.
+
+## 8. Expected Outcome
+
+The final application should provide a functional expense management system with persistent MongoDB storage, complete CRUD operations, search, filtering, sorting, pagination and an interactive financial dashboard.
+
+## 9. Conclusion
+
+SpendWise demonstrates the practical implementation of full-stack development concepts, particularly MongoDB database management, Mongoose schema validation, REST API integration and dynamic React interfaces.

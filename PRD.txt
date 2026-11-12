@@ -1,0 +1,215 @@
+# SpendWise
+## Product Requirements Document (PRD)
+
+**Project Name:** SpendWise  
+**Version:** 1.0  
+**Product Category:** Personal Finance Management  
+**Platform:** Web Application
+
+---
+
+## 1. Product Overview
+
+SpendWise is a personal finance management application that enables individuals to track their daily income and expenses through a centralized dashboard.
+
+The primary goal is to simplify expense tracking and provide users with a clear understanding of their spending habits.
+
+## 2. Problem Statement
+
+Many students and individuals manage their daily expenses manually or through scattered notes. This makes it difficult to:
+- Track total monthly spending.
+- Identify unnecessary expenses.
+- Maintain transaction history.
+- Understand category-wise spending.
+- Monitor available balance.
+
+SpendWise aims to solve these problems through a simple and organized digital platform.
+
+## 3. Product Vision
+
+To create a lightweight, user-friendly financial tracking platform that makes personal money management simple, organized and accessible.
+
+## 4. Target Audience
+
+**Primary Audience:**
+- College students.
+- Young adults.
+- Individuals managing monthly budgets.
+
+**Secondary Audience:**
+- Freelancers.
+- Individuals tracking personal income and spending.
+
+## 5. Core Features
+
+### 5.1 Dashboard
+The main dashboard will display:
+- Total income.
+- Total expenses.
+- Current balance.
+- Recent transactions.
+- Monthly spending overview.
+
+### 5.2 Transaction Management
+Users can:
+- Add new income or expense records.
+- Edit existing transactions.
+- Delete transactions.
+- View transaction history.
+
+### 5.3 Smart Search
+Users can search transactions by title or keyword.
+
+The backend will use MongoDB Regex queries to support partial and case-insensitive matching.
+
+### 5.4 Categories
+Transactions will be organized into predefined categories:
+
+**Expense Categories:**
+- Food
+- Travel
+- Shopping
+- Education
+- Entertainment
+- Bills
+- Others
+
+**Income Categories:**
+- Allowance
+- Salary
+- Freelancing
+- Other Income
+
+### 5.5 Filters and Sorting
+Users can filter transactions based on:
+- Category.
+- Date.
+- Transaction type.
+- Amount.
+
+Users can sort records by date and amount.
+
+### 5.6 Financial Analytics
+The application will provide:
+- Monthly income and expense comparison.
+- Category-wise expense breakdown.
+- Spending distribution charts.
+
+## 6. User Journey
+
+**Step 1:** User opens the SpendWise dashboard.
+
+**Step 2:** User adds an income or expense transaction.
+
+**Step 3:** The frontend sends the transaction data to the Express backend.
+
+**Step 4:** The backend validates the data using Mongoose and stores it in MongoDB.
+
+**Step 5:** The dashboard refreshes and displays updated financial information.
+
+**Step 6:** User searches, filters or analyzes previous transactions.
+
+## 7. Product Prioritization
+
+### P0 – Essential Features
+- Add transaction.
+- View transaction history.
+- Update transaction.
+- Delete transaction.
+- MongoDB integration.
+- Mongoose schema validation.
+
+### P1 – Important Features
+- Search using Regex.
+- Category filtering.
+- Sorting.
+- Pagination.
+- Financial dashboard.
+- Monthly summaries.
+
+### P2 – Future Enhancements
+- User authentication.
+- Personal budget limits.
+- Budget alerts.
+- CSV export.
+- Recurring transactions.
+- Multi-user support.
+
+## 8. UI/UX Requirements
+
+The application should follow a clean and modern financial dashboard design.
+
+### Main Screens
+1. Dashboard – Financial overview and analytics.
+2. Transactions – Complete transaction history.
+3. Add Transaction – Form to record income or expenses.
+4. Categories – Transaction categorization.
+5. Analytics – Monthly and category-wise reports.
+
+### Design Principles
+- Minimal and clean interface.
+- Consistent typography.
+- Responsive layout.
+- Clear visual distinction between income and expenses.
+- Simple navigation.
+- Interactive charts and summary cards.
+
+## 9. Success Criteria
+
+The product will be considered successful when:
+- Users can successfully add, edit and delete transactions.
+- Transaction data persists in MongoDB.
+- Search and filtering return relevant records.
+- Sorting and pagination work correctly.
+- Dashboard calculations reflect stored transactions.
+- React frontend communicates correctly with Express APIs.
+- Input validation prevents invalid transaction records.
+
+## 10. Technical Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React.js + Vite |
+| Styling | CSS3 |
+| Backend | Node.js |
+| API Framework | Express.js |
+| Database | MongoDB |
+| ODM | Mongoose |
+| API Testing | Postman |
+| Database Tool | MongoDB Compass |
+
+## 11. Project Scope and Limitations
+
+### Included in Version 1.0
+- Personal transaction tracking.
+- Income and expense management.
+- Database-backed CRUD operations.
+- Search, filtering and sorting.
+- Pagination.
+- Financial dashboard.
+
+### Not Included in Version 1.0
+- Bank account integration.
+- Automatic transaction detection.
+- Payment processing.
+- Multi-user authentication.
+- AI-based financial recommendations.
+
+## 12. Future Roadmap
+
+**Version 1.1**
+- User registration and login.
+- Individual user dashboards.
+- Monthly budget management.
+
+**Version 2.0**
+- Advanced financial analytics.
+- Automated recurring transactions.
+- Exportable financial reports.
+- Smart spending insights.
+
+## 13. Final Product Outcome
+
+SpendWise will be a functional MERN-based personal expense tracker that provides users with an organized way to record, manage and analyze their financial activities.
+
+The project will demonstrate practical knowledge of React, Express.js, MongoDB, Mongoose, REST APIs and full-stack application integration.
